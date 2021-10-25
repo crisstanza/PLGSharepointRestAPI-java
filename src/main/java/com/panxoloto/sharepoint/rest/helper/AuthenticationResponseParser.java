@@ -29,6 +29,8 @@ public class AuthenticationResponseParser
 	public final static String  parseAuthenticationResponse( final String response )
 		throws AuthenticationException 
 	{
+		System.out.println(response);
+
 		try ( final InputStream is = new ByteArrayInputStream(response.getBytes(utf8)) )
 		{
 			final MessageFactory	f		= MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
