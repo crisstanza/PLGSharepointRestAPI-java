@@ -130,6 +130,9 @@ public class AuthTokenHelperOnline {
 									new URI(TOKEN_LOGIN_URL));
 
 		ResponseEntity<String> responseEntity = restTemplate.exchange(requestEntity, String.class);
+
+		HttpHeaders headers2 = responseEntity.getHeaders();
+
 		return AuthenticationResponseParser.parseAuthenticationResponse(responseEntity.getBody());
 	}
 

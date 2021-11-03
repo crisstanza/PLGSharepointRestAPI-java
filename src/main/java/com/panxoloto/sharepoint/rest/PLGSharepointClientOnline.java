@@ -377,6 +377,9 @@ public class PLGSharepointClientOnline implements PLGSharepointClient {
 
 		MultiValueMap<String, String> headers = headerHelper.getGetHeaders(true);
 
+		System.out.println(headers.getFirst("Cookie"));
+		System.out.println(headers.getFirst("Authorization"));
+
 		RequestEntity<String> requestEntity = new RequestEntity<>("",
 																  headers, HttpMethod.GET,
 																  this.tokenHelper.getSharepointSiteUrl("/_api/web/GetFileByServerRelativeUrl('" + fileServerRelativeUrl +"')/$value")
